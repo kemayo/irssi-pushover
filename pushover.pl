@@ -21,6 +21,7 @@ my $help = <<END;
 Sends highlights to Pushover.net
 Configure with:
 /set pushover_user <user key from dashboard>
+If you want to use your own application key:
 /set pushover_app <app key you generate>
 Send arbitrary message with:
 /pushover send <message goes here>
@@ -30,7 +31,7 @@ my $user;
 my $app;
 
 Irssi::settings_add_str("pushover", "pushover_user", "");
-Irssi::settings_add_str("pushover", "pushover_app", "");
+Irssi::settings_add_str("pushover", "pushover_app", "gmLNYYShDHAMbdiRiUXNFdAyG0590n");
 
 sub reload_settings {
 	$user = Irssi::settings_get_str("pushover_user");
