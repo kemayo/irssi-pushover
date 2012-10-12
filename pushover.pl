@@ -105,6 +105,11 @@ sub pushover_cmd_send {
 		return;
 	}
 
+	if ($user eq "" or $app eq "") {
+		Irssi::print("Can't send to pushover: no user/app tokens", MSGLEVEL_CLIENTCRAP);
+		return;
+	}
+
 	send_to_pushover($data);
 }
 
