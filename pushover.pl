@@ -47,7 +47,7 @@ sub sig_printtext {
 
 sub send_to_pushover {
 	if ($user eq "" or $app eq "") {
-		Irssi::print("Can't send to pushover: no user/app tokens", MSGLEVEL_CLIENTCRAP);
+		# Irssi::print("Can't send to pushover: no user/app tokens", MSGLEVEL_CLIENTCRAP);
 		return;
 	}
 
