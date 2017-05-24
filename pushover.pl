@@ -61,9 +61,12 @@ sub send_to_pushover {
 	}
 	if ($pid > 0) {
 		# parent process
+		# Let Irssi know to wait for the child process, to avoid zombies
+		Irssi::pidwait_add($pid);
 		return;
 	}
 
+	# child process
 	use LWP::UserAgent;
 	LWP::UserAgent->new()->post("https://api.pushover.net/1/messages.json", [
 		"token" => $app,
